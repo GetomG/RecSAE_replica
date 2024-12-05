@@ -26,9 +26,10 @@ python 0_analysis_trainLog.py
 
 ```
 @inproceedings{wang2024SAE,
-	title={Interpret Recommendation Models with Sparse Autoencoder},
+	title={Interpret the Internal States of Recommendation Model with Sparse Autoencoder},
 	author={Jiayin Wang and Xiaoyu Zhang and Weizhi Ma and Min Zhang},
-	year={2024}
+	year={2024},
+	journal={arXiv preprint arXiv:2411.06112}
 }
 ```
 
