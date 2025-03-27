@@ -1,0 +1,62 @@
+INFO:root:Namespace(model_name='SASRec_SAE', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-03-27 18:07:46 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 8                   
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 50                  
+ eval_batch_size    | 256                 
+ gpu                | 0                   
+ history_max        | 20                  
+ l2                 | 1e-06               
+ lr                 | 0.0001              
+ main_metric        |                     
+ num_heads          | 1                   
+ num_layers         | 1                   
+ num_neg            | 1                   
+ num_workers        | 5                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ recsae_model_path  | ../model/SASRec_S...
+ result_data_path   | ../log/SASRec_SAE...
+ sae_k              | 32                  
+ sae_lr             | 0.0005              
+ sae_scale_size     | 32                  
+ sae_train          | 1                   
+ save_final_results | 1                   
+ test_all           | 1                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from ../data/MovieLens_1M/ML_1MTOPK/SeqReader.pkl
+INFO:root:#params: 486720
+INFO:root:SASRec_SAE(
+  (i_embeddings): Embedding(3126, 64)
+  (p_embeddings): Embedding(21, 64)
+  (transformer_block): ModuleList(
+    (0): TransformerLayer(
+      (masked_attn_head): MultiHeadAttention(
+        (q_linear): Linear(in_features=64, out_features=64, bias=True)
+        (k_linear): Linear(in_features=64, out_features=64, bias=True)
+        (v_linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (layer_norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (dropout1): Dropout(p=0, inplace=False)
+      (linear1): Linear(in_features=64, out_features=64, bias=True)
+      (linear2): Linear(in_features=64, out_features=64, bias=True)
+      (layer_norm2): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (dropout2): Dropout(p=0, inplace=False)
+    )
+  )
+  (sae_module): SAE(
+    (encoder): Linear(in_features=64, out_features=2048, bias=True)
+  )
+)
+INFO:root:Load model from ../model/SASRec/SASRec__MovieLens_1M/ML_1MTOPK__0__lr=0.0001__l2=1e-06__emb_size=64__num_layers=1__num_heads=1.pt
+INFO:root:[Rec] Dev Before Training: (HR@5:0.0870,NDCG@5:0.0573,HR@10:0.1288,NDCG@10:0.0705,HR@20:0.1913,NDCG@20:0.0863,HR@50:0.3251,NDCG@50:0.1128)
