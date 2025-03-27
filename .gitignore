@@ -6,7 +6,7 @@ __pycache__/
 *.pyc
 figure/
 doc/
-model/
+# model/
 search.py
 
 # log/
